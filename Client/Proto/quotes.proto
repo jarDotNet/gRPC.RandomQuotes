@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcRandomQuotesService";
+
+package quotes;
+
+// The quotes service definition.
+service Quoter {
+  // Sends a quoting request
+  rpc AskForQuotes (QuotesRequest) returns (QuotesReply);
+}
+
+// The request message containing the number of quotes required.
+message QuotesRequest {
+  int32 number = 1;
+}
+
+// The response message containing the quotes.
+message QuotesReply {
+
+  repeated QuoteMessage quotes = 1;
+}
+
+message QuoteMessage {
+  string message = 1;
+}

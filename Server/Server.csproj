@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.24.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Proto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\Proto\quotes.proto" GrpcServices="Server">
+      <Link>Proto\quotes.proto</Link>
+    </Protobuf>
+  </ItemGroup>
+
+</Project>
